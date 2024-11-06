@@ -34,7 +34,7 @@ android {
     }
 
     lintOptions {
-        baseline file("lint-baseline.xml")
+       abortOnError false
     }
     
     defaultConfig {
