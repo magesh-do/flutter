@@ -17,11 +17,7 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '4145645'
-        channel: "master"
-    - run: |
-          flutter --version
-          flutter doctor -v    
+        flutter-version: '3.24.4'  # Update to the required Flutter version
 
     - name: Install dependencies
       run: flutter pub get
