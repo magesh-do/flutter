@@ -30,3 +30,9 @@ jobs:
       with:
         name: app-release.apk
         path: build/app/outputs/flutter-apk/app-release.apk
+
+    - name: Trigger Jenkins Job
+      if: success()  # Runs only if previous steps were successful
+      run: |
+        curl -X POST "http://jenkins.agilecyber.com/job/Pipeline%20API/buildWithParameters?ENVIRONMENT=staging" \
+        --user agilecyber:1112eccc31dfc3a8e864303d8299667e2e    
