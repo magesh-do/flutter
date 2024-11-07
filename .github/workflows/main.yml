@@ -25,11 +25,6 @@ jobs:
     - name: Build APK
       run: flutter build apk --debug
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v3
-      with:
-        name: app-release.apk
-        path: build/app/outputs/flutter-apk/app-release.apk
 
     - name: Trigger Jenkins Job
       if: success()  # Runs only if previous steps were successful
