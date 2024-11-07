@@ -29,5 +29,5 @@ jobs:
     - name: Trigger Jenkins Job
       if: success()  # Runs only if previous steps were successful
       run: |
-        curl -X POST "https://jenkins.agilecyber.com/job/Pipeline%20API/buildWithParameters?ENVIRONMENT=uat" \
-        --user agilecyber:1112eccc31dfc3a8e864303d8299667e2e    
+        curl -X POST "${{ secrets.JENKINS_URL }}/job/${{ secrets.JENKINS_JOB_NAME }}/buildWithParameters?ENVIRONMENT=staging" \
+        --user "${{ secrets.JENKINS_USERNAME }}:${{ secrets.JENKINS_API_TOKEN }}"   
